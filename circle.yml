@@ -1,0 +1,27 @@
+machine:
+  python:
+    version: 3.6.2
+
+  node:
+    version: v8.2.0
+
+checkout:
+  post:
+    - git submodule sync
+    - git submodule update --init # use submodules
+dependencies:
+  pre:
+   - make dev
+
+test:
+  override:
+    - echo "No Testing :P"
+
+  post:
+    - make build
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./scripts/deploy-to-production.sh
