@@ -26,17 +26,17 @@ Misc. Commands:
 
 ```
 # git
-make commit
-make push
-make pull
+> make commit
+> make push
+> make pull
 
 # clean venv and dependencies
-make clean
+> make clean
 
 # install dependencies
-make dev
+> make dev
 
 # migrate django
-make migrate
+> make migrate
 ```
 
