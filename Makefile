@@ -1,4 +1,5 @@
-# Use development settings for running django dev server.
+#
+#Use development settings for running django dev server.
 export DJANGO_SETTINGS_MODULE=backend.settings_dev
 
 ifeq (run-django,$(firstword $(MAKECMDGOALS)))
@@ -43,11 +44,11 @@ commitpush: commit push
 
 # Runs development server.
 # This step depends on `make dev`, however dependency is excluded to speed up dev server startup.
-run-dev:
+run-dev: venv
 	npm run dev & $(VENV_PYTHON_PATH) ./manage.py runserver
 	
 #run-npm run-django
-run-npm:
+run-npm: venv
 	npm run dev
 
 run-django: venv
