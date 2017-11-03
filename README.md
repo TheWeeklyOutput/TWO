@@ -24,7 +24,8 @@ Running:
 
 Misc. Commands:
 
-```
+```bash
+
 # git
 > make commit
 > make push
@@ -38,5 +39,6 @@ Misc. Commands:
 
 # migrate django
 > make migrate
+
 ```
 
