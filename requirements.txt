@@ -2,4 +2,5 @@ Django
 django-webpack-loader
 djangorestframework
 django-super-inlines
+spacy
 gunicorn
