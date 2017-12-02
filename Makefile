@@ -13,7 +13,7 @@ VENV_PIP_PATH = $(VENV_PATH)/bin/pip
 VENV_PYTHON_PATH = $(VENV_PATH)/bin/python
 
 venv:
-	test -d venv || virtualenv $(VENV_PATH) --python=python3
+	test -d $(VENV_PATH) || virtualenv $(VENV_PATH) --python=python3
 	touch $(VENV_ACTIVATE_PATH)
 
 # Initializes virtual environment with basic requirements.
