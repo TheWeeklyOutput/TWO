@@ -57,6 +57,7 @@ run-django: venv
 # Creates migrations and migrates database.
 # This step depends on `make dev`, however dependency is excluded to speed up dev server startup.
 migrate: venv
+	$(VENV_PYTHON_PATH) ./manage.py makemigrations mangler
 	$(VENV_PYTHON_PATH) ./manage.py makemigrations
 	$(VENV_PYTHON_PATH) ./manage.py migrate
 
