@@ -54,6 +54,7 @@
     "vue-shortkey": "^2.1.9",
     "vue-style-loader": "^3.0.1",
     "vue-svg-loader": "^0.2.0",
+    "vue-tweet-embed": "^2.0.0",
     "vueify": "^9.4.1",
     "vuetify": "^0.14.8",
     "vuex": "^2.0.0",
