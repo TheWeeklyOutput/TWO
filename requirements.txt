@@ -5,3 +5,4 @@ django-super-inlines
 django-picklefield
 spacy
 gunicorn
+
