@@ -13,7 +13,7 @@ VENV_PIP_PATH = $(VENV_PATH)/bin/pip
 VENV_PYTHON_PATH = $(VENV_PATH)/bin/python
 
 venv:
-	test -d venv || virtualenv $(VENV_PATH) --python=python3
+	test -d $(VENV_PATH) || virtualenv $(VENV_PATH) --python=python3
 	touch $(VENV_ACTIVATE_PATH)
 
 # Initializes virtual environment with basic requirements.
@@ -26,6 +26,9 @@ dev: venv
 	$(VENV_PIP_PATH) install -r requirements.txt
 	$(VENV_PIP_PATH) install -r requirements-dev.txt
 	npm install
+
+fixtures: 
+	$(VENV_PYTHON_PATH) ./manage.py loaddata category
 
 # create super user
 superuser: venv
@@ -57,6 +60,9 @@ run-django: venv
 # Creates migrations and migrates database.
 # This step depends on `make dev`, however dependency is excluded to speed up dev server startup.
 migrate: venv
+	$(VENV_PYTHON_PATH) ./manage.py makemigrations generator
+	$(VENV_PYTHON_PATH) ./manage.py makemigrations corpora
+
 	$(VENV_PYTHON_PATH) ./manage.py makemigrations
 	$(VENV_PYTHON_PATH) ./manage.py migrate
 
