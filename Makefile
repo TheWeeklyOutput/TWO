@@ -29,6 +29,7 @@ dev: venv
 
 fixtures: 
 	$(VENV_PYTHON_PATH) ./manage.py loaddata category
+	$(VENV_PYTHON_PATH) ./manage.py loaddata author
 
 # create super user
 superuser: venv
