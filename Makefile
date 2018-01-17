@@ -27,6 +27,9 @@ dev: venv
 	$(VENV_PIP_PATH) install -r requirements-dev.txt
 	npm install
 
+fixtures: 
+	$(VENV_PYTHON_PATH) ./manage.py loaddata category
+
 # create super user
 superuser: venv
 	$(VENV_PYTHON_PATH) ./manage.py createsuperuser
@@ -58,6 +61,8 @@ run-django: venv
 # This step depends on `make dev`, however dependency is excluded to speed up dev server startup.
 migrate: venv
 	$(VENV_PYTHON_PATH) ./manage.py makemigrations generator
+	$(VENV_PYTHON_PATH) ./manage.py makemigrations corpora
+
 	$(VENV_PYTHON_PATH) ./manage.py makemigrations
 	$(VENV_PYTHON_PATH) ./manage.py migrate
 
