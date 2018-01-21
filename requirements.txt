@@ -3,6 +3,5 @@ django-webpack-loader
 djangorestframework
 django-super-inlines
 django-picklefield
-spacy
+tqdm
 gunicorn
-

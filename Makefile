@@ -1,12 +1,19 @@
-#
-#Use development settings for running django dev server.
+
+# Use development settings for running django dev server.
 export DJANGO_SETTINGS_MODULE=backend.settings_dev
 
-ifeq (run-django,$(firstword $(MAKECMDGOALS)))
+# args
+ifeq (run-django,$(firstword $(MAKECMDGOALS))) 
   PORT := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
   $(eval $(PORT):;@:)
 endif
 
+ifeq (management,$(firstword $(MAKECMDGOALS))) 
+  SUBCMD := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+  $(eval $(SUBCMD):;@:)
+endif
+
+# virtualenv
 VENV_PATH = .env
 VENV_ACTIVATE_PATH = $(VENV_PATH)/bin/activate
 VENV_PIP_PATH = $(VENV_PATH)/bin/pip
@@ -27,14 +34,30 @@ dev: venv
 	$(VENV_PIP_PATH) install -r requirements-dev.txt
 	npm install
 
-fixtures: 
+# Django Management
+management: venv
+	$(VENV_PYTHON_PATH) ./manage.py $(SUBCMD)
+
+fixtures: venv
 	$(VENV_PYTHON_PATH) ./manage.py loaddata category
 	$(VENV_PYTHON_PATH) ./manage.py loaddata author
+
+# Creates migrations and migrates database.
+migrate: venv
+	$(VENV_PYTHON_PATH) ./manage.py makemigrations
+	$(VENV_PYTHON_PATH) ./manage.py makemigrations corpora
+
+	$(VENV_PYTHON_PATH) ./manage.py migrate
+
+# run syncdb
+syncdb: venv
+	$(VENV_PYTHON_PATH) ./manage.py migrate --run-syncdb
 
 # create super user
 superuser: venv
 	$(VENV_PYTHON_PATH) ./manage.py createsuperuser
 
+# git
 pull:
 	bash scripts/pull.sh
 
@@ -58,20 +81,10 @@ run-npm: venv
 run-django: venv
 	$(VENV_PYTHON_PATH) ./manage.py runserver 0.0.0.0:$(PORT)
 
-# Creates migrations and migrates database.
-# This step depends on `make dev`, however dependency is excluded to speed up dev server startup.
-migrate: venv
-	$(VENV_PYTHON_PATH) ./manage.py makemigrations generator
-	$(VENV_PYTHON_PATH) ./manage.py makemigrations corpora
-
-	$(VENV_PYTHON_PATH) ./manage.py makemigrations
-	$(VENV_PYTHON_PATH) ./manage.py migrate
-
 # Builds files for distribution which will be placed in /static/dist
 build: prod migrate venv
 	npm run build
 	$(VENV_PYTHON_PATH) ./manage.py collectstatic
-
 
 # Cleans up folder by removing virtual environment, node modules and generated files.
 clean:
