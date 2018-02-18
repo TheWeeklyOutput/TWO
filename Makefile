@@ -39,6 +39,7 @@ management: venv
 	$(VENV_PYTHON_PATH) ./manage.py $(SUBCMD)
 
 fixtures: venv
+	$(VENV_PYTHON_PATH) ./manage.py loaddata contenttype
 	$(VENV_PYTHON_PATH) ./manage.py loaddata category
 	$(VENV_PYTHON_PATH) ./manage.py loaddata author
 	$(VENV_PYTHON_PATH) ./manage.py loaddata document
