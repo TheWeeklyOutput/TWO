@@ -1,7 +1,9 @@
-Django
+Django==1.11
 django-webpack-loader
 djangorestframework
 django-super-inlines
 django-picklefield
 tqdm
 gunicorn
+google-cloud
+pyyaml
