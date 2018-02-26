@@ -43,7 +43,8 @@ fixtures: venv
 	$(VENV_PYTHON_PATH) ./manage.py loaddata contenttype
 	$(VENV_PYTHON_PATH) ./manage.py loaddata category
 	$(VENV_PYTHON_PATH) ./manage.py loaddata author
-	$(VENV_PYTHON_PATH) ./manage.py loaddata document
+	$(VENV_PYTHON_PATH) ./manage.py loaddata paragraph
+	$(VENV_PYTHON_PATH) ./manage.py loaddata article
 
 # Creates migrations and migrates database.
 migrate: venv
@@ -55,6 +56,23 @@ migrate: venv
 # run syncdb
 syncdb: venv
 	$(VENV_PYTHON_PATH) ./manage.py migrate --run-syncdb
+
+db-backup:
+	- mkdir .db_backups
+	mv db.sqlite3 .db_backups/$(shell date +'%y.%m.%d-%H:%M:%S').sqlite3
+	@echo "Database Backup: .db_backups/$(shell date +'%y.%m.%d-%H:%M:%S').sqlite3"
+
+new-db:
+	@echo "All data in db.sqlite3 will be lost."
+	@read -p "Press any key to continue or Ctrl + C to abort." fake;
+	
+	make db-backup
+	rm -f db.sqlite3
+
+	make syncdb
+	make migrate
+	make fixtures
+	make superuser
 
 # create super user
 superuser: venv
