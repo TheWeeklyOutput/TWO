@@ -106,7 +106,7 @@ run-django: venv
 # Builds files for distribution which will be placed in /static/dist
 build: prod migrate venv
 	npm run build
-	$(VENV_PYTHON_PATH) ./manage.py collectstatic
+	$(VENV_PYTHON_PATH) ./manage.py collectstatic --noinput
 
 # Cleans up folder by removing virtual environment, node modules and generated files.
 clean:
