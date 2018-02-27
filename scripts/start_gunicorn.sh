@@ -2,10 +2,12 @@
 
 NAME="TWO"                            #Name of the application (*)
 DJANGODIR=/var/www/TWO                    # Django project directory (*)
-SOCKFILE=$DJANGODIR/run/gunicorn.sock             # we will communicate using this unix socket (*)
+SOCKFILE=$DJANGODIR/run/gunicorn.sock           # we will communicate using this unix socket (*)
+ACCESS_LOGFILE=$DJANGODIR/logs/gunicorn-access.log
+ERROR_LOGFILE=$DJANGODIR/logs/gunicorn-error.log
 VIRTUALENV=$DJANGODIR/.env
 USER=www-data                                        # the user to run as (*)
-GROUP=www-data                                     # the group to run as (*)
+GROUP=www-data                           # the group to run as (*)
 NUM_WORKERS=1                                     # how many worker processes should Gunicorn spawn (*)
 DJANGO_SETTINGS_MODULE=backend.settings             # which settings file should Django use (*)
 DJANGO_WSGI_MODULE=backend.wsgi                     # WSGI module name (*)
@@ -28,4 +30,6 @@ exec $VIRTUALENV/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --name $NAME \
   --workers $NUM_WORKERS \
   --user $USER \
+  --error-logfile $ERROR_LOGFILE \
+  --access-logfile $ACCESS_LOGFILE \
   --bind=unix:$SOCKFILE
