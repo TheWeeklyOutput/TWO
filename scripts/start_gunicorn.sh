@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME="The Weekly Output"                            #Name of the application (*)
+NAME="TheWeeklyOutput"                            #Name of the application (*)
 DJANGODIR=/var/www/TWO                    # Django project directory (*)
 SOCKFILE=$DJANGODIR/run/gunicorn.sock             # we will communicate using this unix socket (*)
 VIRTUALENV=$DJANGODIR/.env
