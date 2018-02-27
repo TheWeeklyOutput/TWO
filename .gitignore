@@ -4,7 +4,13 @@
 log.txt
 
 *.sqlite3 
+db.sqlite3 
 
+package-lock.json
 node_modules/
 
 .env/
+
+backend/__pycache__
+*/__pycache__/
+*/migrations/*
