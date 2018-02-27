@@ -1,6 +1,10 @@
 
 # Use development settings for running django dev server.
-export DJANGO_SETTINGS_MODULE=backend.settings_dev
+ifeq ($(PRODUCTION),true)
+	export DJANGO_SETTINGS_MODULE=backend.settings
+else
+	export DJANGO_SETTINGS_MODULE=backend.settings_dev
+endif
 
 # args
 ifeq (run-django,$(firstword $(MAKECMDGOALS))) 
@@ -25,7 +29,6 @@ venv:
 
 # Initializes virtual environment with basic requirements.
 prod: venv 
-	export DJANGO_SETTINGS_MODULE=backend.settings
 	$(VENV_PIP_PATH) install -Ur requirements.txt 
 	npm install --production
 
