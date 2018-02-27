@@ -25,7 +25,7 @@ venv:
 
 # Initializes virtual environment with basic requirements.
 prod: venv 
-	export DJANGO_SETTINGS_MODULE=backend.settings_dev
+	export DJANGO_SETTINGS_MODULE=backend.settings
 	$(VENV_PIP_PATH) install -Ur requirements.txt 
 	npm install --production
 
