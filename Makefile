@@ -30,12 +30,15 @@ venv:
 # Initializes virtual environment with basic requirements.
 prod: venv 
 	$(VENV_PIP_PATH) install -Ur requirements.txt 
+	rm -rf node_modules/ 
+
 	npm install --production
 
 # Installs development requirements.
 dev: venv
 	$(VENV_PIP_PATH) install -r requirements.txt
 	$(VENV_PIP_PATH) install -r requirements-dev.txt
+	rm -rf node_modules/ 
 	npm install
 
 # Django Management
