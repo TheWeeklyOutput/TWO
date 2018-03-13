@@ -48,7 +48,7 @@ fixtures: venv
 	$(VENV_PYTHON_PATH) ./manage.py loaddata category
 	$(VENV_PYTHON_PATH) ./manage.py loaddata author
 	$(VENV_PYTHON_PATH) ./manage.py loaddata corpus
-#	$(VENV_PYTHON_PATH) ./manage.py loaddata generateddocument
+	$(VENV_PYTHON_PATH) ./manage.py loaddata generateddocument
 
 # Creates migrations and migrates database.
 migrate: venv
