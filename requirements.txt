@@ -8,3 +8,5 @@ gunicorn
 google-cloud
 pyyaml
 wikidata
+beautifulsoup4
+lxml
