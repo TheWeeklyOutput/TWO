@@ -73,7 +73,7 @@
     "setimmediate": "^1.0.5",
     "style-loader": "^0.13.1",
     "testcafe": "^0.12.1",
-    "vue": "^2.5.13",
+    "vue": "^2.5.15",
     "vue-affix": "^0.2.4",
     "vue-infinite-loading": "^2.2.3",
     "vue-infinite-scroll": "^2.0.2",
