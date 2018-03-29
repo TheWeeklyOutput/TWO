@@ -10,3 +10,4 @@ pyyaml
 wikidata
 beautifulsoup4
 lxml
+python-dateutil

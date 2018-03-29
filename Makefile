@@ -115,11 +115,13 @@ build: prod migrate venv
 	$(VENV_PYTHON_PATH) ./manage.py collectstatic --noinput
 
 # Cleans up folder by removing virtual environment, node modules and generated files.
-clean:
+clean-deps:
 	rm -rf $(VENV_PATH)
 	rm -rf node_modules
 	rm -rf static/dist
-
+# Clears migrations
+clean-migrations:
+	rm -rf backend/corpora/migrations/*
 # Run linter
 lint:
 	@npm run lint --silent
