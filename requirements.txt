@@ -10,8 +10,4 @@ pyyaml
 wikidata
 beautifulsoup4
 lxml
-<<<<<<< HEAD
 python-dateutil
-=======
-python-dateutil
->>>>>>> 57b6cc2a37a4c8b3aff5939e177b4de5c44e135e
