@@ -24,7 +24,7 @@ Running:
 
 Misc. Commands:
 
-```
+```bash
 # git
 make commit
 make push
@@ -33,10 +33,16 @@ make pull
 # clean venv and dependencies
 make clean
 
+# backup database and make a new one
+make new-dbs
+
 # install dependencies
 make dev
 
 # migrate django
 make migrate
+
+# django management command
+make mangement "<command>"
 ```
 
