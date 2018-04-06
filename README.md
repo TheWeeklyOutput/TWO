@@ -11,8 +11,14 @@ Initial Setup:
 > git submodule init
 > git submodule update
 > make dev
+
+# install initial categories, outelts, etc.
 > make fixtures
+
+# crawl new articles
 > make management "crawl --date 2018-02 --amount-per-category 10"
+
+# generate new articles (if you dont do this when setting up, you wont be able to get any hightlights)
 > make management "generate --active-categories True --amount 5"
 ```
 
@@ -36,7 +42,7 @@ make pull
 make clean
 
 # backup database and make a new one
-make new-dbs
+make new-db
 
 # install dependencies
 make dev
