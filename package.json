@@ -34,13 +34,13 @@
     }
   },
   "browserslist": [
-    "last 2 versions",
-    "ie > 8"
+    "> 1%",
+    "last 7 versions",
+    "not ie <= 8"
   ],
   "dependencies": {
     "EventEmitter": "^1.0.0",
     "async": "^2.5.0",
-    "autoprefixer": "^6.4.0",
     "babel-core": "^6.16.0",
     "babel-loader": "^6.4.1",
     "babel-preset-vue-app": "^1.1.1",
@@ -88,7 +88,6 @@
     "vue-slideout": "^1.7.0",
     "vue-social-sharing": "^2.3.3",
     "vue-style-loader": "^4.0.2",
-    "vue-svg-loader": "^0.4.0",
     "vue-template-compiler": "2.5.16",
     "vue-timeago": "^3.4.4",
     "vue-tweet-embed": "^2.0.0",
@@ -103,7 +102,7 @@
     "xo": "^0.18.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.4.0",
+    "autoprefixer": "^6.7.7",
     "babel-core": "^6.16.0",
     "babel-loader": "^6.4.1",
     "babel-preset-vue-app": "^1.1.1",
@@ -128,7 +127,7 @@
     "testcafe": "^0.12.1",
     "vue-loader": "^11.0.0",
     "vue-resize-handle": "^1.0.0",
-    "vue-svg-loader": "^0.2.0",
+    "vue-svg-loader": "^0.4.0",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^2.7.0",
     "webpack-dev-middleware": "^1.8.1",
