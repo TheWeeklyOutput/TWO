@@ -1,5 +1,5 @@
 {
-  "name": "TheWeeklyOutput",
+  "name": "theweeklyoutput",
   "version": "0.1.0",
   "description": "The Weekly Output - Django, Vue, Webpack2",
   "main": "frontend/index.js",
@@ -35,8 +35,7 @@
   },
   "browserslist": [
     "> 1%",
-    "last 7 versions",
-    "not ie <= 8"
+    "last 7 versions"
   ],
   "dependencies": {
     "EventEmitter": "^1.0.0",
@@ -67,6 +66,8 @@
     "npm-check-updates": "^2.14.1",
     "nuxt-matomo": "^0.4.0",
     "offline-plugin": "^4.5.3",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-custom-properties": "^7.0.0",
     "postcss-loader": "^0.9.1",
     "postcss-nested": "^1.0.0",
     "promise-polyfill": "^6.0.2",
@@ -88,8 +89,8 @@
     "vue-shortkey": "^3.0.4",
     "vue-slideout": "^1.7.0",
     "vue-social-sharing": "^2.3.3",
-    "vue-svg-loader": "^0.3.0",
     "vue-style-loader": "^4.0.2",
+    "vue-svg-loader": "^0.3.0",
     "vue-template-compiler": "2.5.16",
     "vue-timeago": "^3.4.4",
     "vue-tweet-embed": "^2.0.0",
