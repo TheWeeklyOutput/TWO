@@ -1,4 +1,17 @@
 .DS_Store
+<<<<<<< HEAD
+=======
+
+.scrapecache
+
+*.log
+log.txt
+
+*.sqlite3 
+db.sqlite3 
+
+package-lock.json
+>>>>>>> d55a3930c34c399edf092e9491c2a6792216050b
 node_modules/
 /dist/
 npm-debug.log*

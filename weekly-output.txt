@@ -9,7 +9,7 @@
                  / _ \ || |  _/ _ \ '  \/ _` |  _/ -_) _` | | .` / -_) V  V (_-<
                 /_/ \_\_,_|\__\___/_|_|_\__,_|\__\___\__,_| |_|\_\___|\_/\_//__/
 
-                   Robert Miller, Daniel Wetzelhütter, Maxmilian Wolschlager, 2018
+                 Robert Miller, Daniel Wetzelhütter, Maxmilian Wolschlager, 2018
 
 
                                          Website:
@@ -22,7 +22,7 @@
 
 
 
-
+                                  
                                  |   WEEKLY  |  OUTPUT   |
                                  |&&& === ===|#// +++++++|
                                  |=== === [_]|//% =======|
