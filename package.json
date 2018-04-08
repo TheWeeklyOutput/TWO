@@ -7,7 +7,7 @@
     "dev": "webpack-dev-server --inline --mode development --config frontend/build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node frontend/build/build.js --mode development"
+    "build": "node frontend/build/build.js"
   },
   "private": false,
   "author": "funiel <d.wetzelhuetter@gmail.com>, meks <comms@meks.io>",
@@ -130,6 +130,7 @@
     "vue-resize-handle": "^1.0.0",
     "vue-resource": "^1.5.0",
     "vue-router": "^3.0.1",
+    "vue-loader": "^14.2.2",
     "vue-shortkey": "^3.1.0",
     "vue-slideout": "^1.7.0",
     "vue-social-sharing": "^2.3.3",
