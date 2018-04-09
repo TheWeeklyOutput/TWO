@@ -1,4 +1,8 @@
 .DS_Store
+<<<<<<< HEAD
+=======
+
+.scrapecache
 
 *.log
 log.txt
@@ -7,13 +11,17 @@ log.txt
 db.sqlite3 
 
 package-lock.json
+>>>>>>> d55a3930c34c399edf092e9491c2a6792216050b
 node_modules/
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-.env/
-
-backend/__pycache__
-*/__pycache__/
-*/migrations/*
-
-keys/*
-!keys/
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
