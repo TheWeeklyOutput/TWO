@@ -1,22 +1,22 @@
 .DS_Store
-<<<<<<< HEAD
-=======
 
 .scrapecache
 
 *.log
 log.txt
 
-*.sqlite3 
-db.sqlite3 
+*.sqlite3
+db.sqlite3
 
 package-lock.json
->>>>>>> d55a3930c34c399edf092e9491c2a6792216050b
 node_modules/
 /dist/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/keys/*
+!/keys/.keep
 
 # Editor directories and files
 .idea
