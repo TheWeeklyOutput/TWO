@@ -7,12 +7,12 @@ else
 endif
 
 # args
-ifeq (run-django,$(firstword $(MAKECMDGOALS))) 
+ifeq (run-django,$(firstword $(MAKECMDGOALS)))
   PORT := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
   $(eval $(PORT):;@:)
 endif
 
-ifeq (management,$(firstword $(MAKECMDGOALS))) 
+ifeq (management,$(firstword $(MAKECMDGOALS)))
   SUBCMD := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
   $(eval $(SUBCMD):;@:)
 endif
@@ -28,9 +28,9 @@ venv:
 	touch $(VENV_ACTIVATE_PATH)
 
 # Initializes virtual environment with basic requirements.
-prod: venv 
-	$(VENV_PIP_PATH) install -Ur requirements.txt 
-	rm -rf node_modules/ 
+prod: venv
+	$(VENV_PIP_PATH) install -Ur requirements.txt
+	rm -rf node_modules/
 
 	npm install --production
 
@@ -38,14 +38,18 @@ prod: venv
 dev: venv
 	$(VENV_PIP_PATH) install -r requirements.txt
 	$(VENV_PIP_PATH) install -r requirements-dev.txt
-	rm -rf node_modules/ 
+	rm -rf node_modules/
 	npm install
 
 # Django Management
 management: venv
 	$(VENV_PYTHON_PATH) ./manage.py $(SUBCMD)
 
+ping-google: venv
+	$(VENV_PYTHON_PATH) ./manage.py ping_google
+
 fixtures: venv
+	$(VENV_PYTHON_PATH) ./manage.py loaddata site
 	$(VENV_PYTHON_PATH) ./manage.py loaddata outlet
 	$(VENV_PYTHON_PATH) ./manage.py loaddata contenttype
 	$(VENV_PYTHON_PATH) ./manage.py loaddata category
@@ -72,7 +76,7 @@ db-backup:
 new-db:
 	@echo "All data in db.sqlite3 will be lost."
 	@read -p "Press any key to continue or Ctrl + C to abort." fake;
-	
+
 	make db-backup
 	rm -f db.sqlite3
 
@@ -101,7 +105,7 @@ commitpush: commit push
 # This step depends on `make dev`, however dependency is excluded to speed up dev server startup.
 run-dev: venv
 	npm run dev & $(VENV_PYTHON_PATH) ./manage.py runserver
-	
+
 #run-npm run-django
 run-npm: venv
 	npm run dev
