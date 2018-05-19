@@ -31,13 +31,13 @@
   },
   "postcss": {
     "plugins": {
-      "postcss-cssnext": { "browsers": [ ">= 1%", "last 5 versions"] },
+      "postcss-cssnext": { "browsers": [ "> 1%", "last 5 versions"] },
       "postcss-nested": {},
       "postcss-calc": {}
     }
   },
   "browserslist": [
-    ">= 1%",
+    "> 1%",
     "last 5 versions"
   ],
   "dependencies": {
