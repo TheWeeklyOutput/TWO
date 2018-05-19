@@ -90,8 +90,10 @@ superuser: venv
 	$(VENV_PYTHON_PATH) ./manage.py createsuperuser
 
 # git
-pull:
-	bash scripts/pull.sh
+pull-master:
+	bash scripts/pull_master.sh
+pull-develop:
+	bash scripts/pull_develop.sh
 
 commit:
 	bash scripts/commit.sh
