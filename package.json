@@ -31,14 +31,16 @@
   },
   "postcss": {
     "plugins": {
-      "autoprefixer": {},
+      "autoprefixer": {
+        "browsers": [
+          "> 1%"
+        ]
+      },
       "postcss-nested": {}
     }
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
+    "> 1%"
   ],
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.5",
@@ -67,8 +69,7 @@
     "css-loader": "^0.28.11",
     "date-fns": "^1.29.0",
     "es6-object-assign": "^1.1.0",
-    "eslint": "^4.9.0",
-    "eslint": "^3.0.0",
+    "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-vue": "latest",
     "eslint-friendly-formatter": "^4.0.0",
