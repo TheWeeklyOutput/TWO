@@ -31,7 +31,12 @@
   },
   "postcss": {
     "plugins": {
-      "postcss-cssnext": { "browsers": [ "> 1%", "last 5 versions"] },
+      "postcss-cssnext": {
+        "browsers": [
+          "> 1%",
+          "last 5 versions"
+        ]
+      },
       "postcss-nested": {},
       "postcss-calc": {}
     }
@@ -68,7 +73,7 @@
     "cssnano": "^4.0.0-rc.2",
     "date-fns": "^1.29.0",
     "es6-object-assign": "^1.1.0",
-    "eslint": "^4.19.1",
+    "eslint": "^4.9.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-config-vue": "latest",
     "eslint-friendly-formatter": "^4.0.0",
@@ -78,7 +83,7 @@
     "eslint-plugin-promise": "^3.7.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-testcafe": "^0.2.1",
-    "eslint-plugin-vue": "latest",
+    "eslint-plugin-vue": "^2.0.0",
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
@@ -175,7 +180,7 @@
     "css-loader": "^0.28.11",
     "eslint-config-vue": "latest",
     "eslint-plugin-testcafe": "^0.2.1",
-    "eslint-plugin-vue": "latest",
+    "eslint-plugin-vue": "^2.0.0",
     "express": "^4.16.3",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^1.1.11",
