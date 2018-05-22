@@ -3,7 +3,6 @@ django-sites
 django-webpack-loader
 djangorestframework
 django-super-inlines
-django-picklefield
 tqdm
 gunicorn
 google-cloud
@@ -12,3 +11,4 @@ wikidata
 beautifulsoup4
 lxml
 python-dateutil
+WeasyPrint
