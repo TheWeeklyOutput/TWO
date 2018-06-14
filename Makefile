@@ -36,8 +36,8 @@ prod: venv
 
 # Installs development requirements.
 dev: venv
-	$(VENV_PIP_PATH) install -r requirements.txt
-	$(VENV_PIP_PATH) install -r requirements-dev.txt
+	$(VENV_PYTHON_PATH) -m pip install -r requirements.txt
+	$(VENV_PYTHON_PATH) -m pip install -r requirements-dev.txt
 	rm -rf node_modules/
 	npm install
 

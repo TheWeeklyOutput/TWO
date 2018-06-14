@@ -1,3 +1,3 @@
 #!/bin/bash
 
-make management "crawl --date $(date "+%Y-%m") --amount-per-category 200"
+cd /var/www/TWO && make management "crawl --date $(date "+%Y-%m") --amount-per-category 200"
